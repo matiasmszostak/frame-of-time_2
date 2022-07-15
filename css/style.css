@@ -1,0 +1,624 @@
+/*
+Roboto font
+font-family: 'Roboto', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #333;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h2{
+    font-size: 3rem !important;
+}
+
+
+.header-index{
+    position: relative;
+    overflow-x: hidden;
+}
+
+nav{
+    position: relative;
+    width: 100vw;
+    height: 100px;
+    font-size: 1.3rem;
+    overflow-x: hidden;
+}
+
+
+.nav-title{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+nav h3{
+    position: absolute;
+    color: #fff;
+    right: 130px;
+}
+
+.nav-logo{
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    z-index: 3;
+    width: 60px;
+    height: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+
+.nav-logo:hover{
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0.6;
+}
+
+
+
+/*HEADER SLIDER*/
+
+.slider{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+
+}
+
+.slide.current{
+    opacity: 1;
+}
+
+.slide .content{
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    opacity: 0;
+    width: 600px;
+    background-color: rgba(51, 51, 51, 0.488);
+    color: #fff;
+    padding: 35px;
+}
+
+.slide .content h1{
+    margin-bottom: 10px;
+}
+
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next{
+    position: absolute;
+    right: 15px;
+}
+.buttons button#prev{
+    position: absolute;
+    left: 15px;
+}
+
+.buttons button{
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+    padding: 22px 15px;
+    top: 45%;
+}
+
+.buttons button:hover{
+    transition: background-color 0.3s ease-in-out;
+    background-color: #fff;
+    color: #333;
+}
+
+
+
+.main-index{
+    position: relative;
+    height: 370vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.main-index::after{
+    content: "";
+    position: absolute;
+    background: url('../img/background-main.jpg') repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+/*ABOUT INDEX*/
+
+
+.about{
+    margin-top: 5%;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.about-text{
+    width: 40vw;
+    height: 100vh;
+    padding-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+}
+.about-text p{
+    margin-top: 50px;
+}
+p{
+    text-align: justify;
+}
+
+.about-foto{
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#foto-perfil{
+    height: 90vh;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #33333350;
+}
+
+
+/*PROYECTOS*/
+
+#proyectos{
+    margin-top: 10vh;
+    margin-bottom: -10vh;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.proyectos-container{
+    height: 85vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card{
+    height: 60vh;
+    width: 300px;
+    background: var(--i) center;
+    background-size: cover;
+    box-shadow: 3px 5px 5px rgba(3, 32, 51, 0.8);
+    border: none;
+    color: #fff;
+    border-radius: 50px !important;
+    border: none !important;
+}
+
+
+.card-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    border: none;
+    opacity: 0;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.card-screen{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50px;
+}
+
+.card-content h3 {
+    color: #fff;
+    text-shadow: 2px 2px 10px #333;
+    font-weight: 300;
+    font-size: 2.2rem;
+}
+
+.card-content h3{
+    position: absolute;
+    bottom: 43%;
+}
+
+.card-title-israel{
+    position: absolute;
+    bottom: 50% !important;
+}
+.card-title-palestina{
+    position: absolute;
+    bottom: 36% !important;
+}
+
+.card-screen:hover{
+    opacity: 1;
+}
+
+.card-content:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+.proyectos-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.proyectos-cards ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.proyectos-cards a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyectos-cards h4{
+    z-index: 2;
+    font-size: 1rem;
+    color: red;
+}
+
+
+.proyectos-cards img{
+    height: 65vh;
+    width: auto;
+    border-radius: 50px;
+    box-shadow: 5px 5px 15px rgb(53, 53, 53, 0.8);
+    border: none;
+}
+
+.proyectos-cards img:hover{
+    opacity: 70%;
+}
+
+*/
+
+
+
+
+
+/*
+CONTACTO
+*/
+
+.contacto-form{
+    margin-top: 30vh;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60vw;
+}
+
+label{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+#form-nombre{
+    width: 100%;   
+   }
+
+#form-email{
+ width: 100%;   
+}
+
+.form-label{
+    font-size: 1.5rem;
+}
+
+
+button{
+    width: 5vw;
+    align-self: flex-end;
+}
+
+
+footer{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    background-color: #333;
+    color: #fff;
+    z-index: 2;
+}
+
+footer h4{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    overflow-y: hidden;
+}
+
+
+textarea{
+    width: 100%;
+    max-height: 250px;
+    min-height: 150px;
+}
+textarea::placeholder{
+    font-size: 1rem;
+}
+
+
+.dropdown{
+    width: 30rem;
+}
+.dropdown-select{
+    padding: 1.5 rem;
+    border-radius: 4px;
+    border-style: solid;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.6;
+    cursor: pointer;
+}
+
+/*FOOTER*/
+
+footer{
+    height: 50vh;
+    width: 100vw;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+footer h3{
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+.footer-logo{
+    width: 60px;
+    height: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+
+.redes-sociales{
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    width: 40vw;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.redes-sociales a:hover{
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0.6;
+}
+
+.redes-sociales .eyeem{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .behance{
+    height: 50px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .instagram{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .linkedin{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+.redes-sociales .whatsapp{
+    height: 40px;
+    width: auto;
+    filter: invert(75%) brightness(118%) contrast(119%);
+}
+
+
+footer h6{
+    font-weight: 100;
+    color: #fff;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+.arrow-up{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+}
+.arrow-up img{
+    width: 75px;
+    height: auto;
+    filter: invert(50%) brightness(118%) contrast(119%);
+}
+
+.arrow-up img:hover{
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0.8;
+}
+
+
+/* MAIN LOGIN */
+.main-login{
+    height: 120vh;
+    width: 100vw;
+    position: relative;
+}
+.main-login-form{
+    padding-left: 150px;
+    padding-top: 150px;
+}
+
+.main-login::after{
+    content: "";
+    position: absolute;
+    background: url('../img/background-main.jpg') repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.login-logo{
+    margin-top: -20px;
+    margin-right: 10px;
+    height: 60px;
+    width: auto;
+}
+
+
+.login-container-buda{
+    width: 40%;
+    height: 100%;
+}
+
+.login-foto-buda{
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    object-fit: cover;
+    object-position: top;
+}
+
+.btn-login{
+    text-align: center;
+    padding-right: 65px !important;
+}
+
+
+
+@media(max-width: 500px){
+    .slide .content{
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+    }
+
+    .slide.current .content{
+        transform: translateY(-300px);
+    }
+
+}
+
+
+/*Background Images*/
+.slide:first-child{
+    background: url('../img/desierto-pare.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(2){
+    background: url('../img/gato-norte.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(3){
+    background: url('../img/kabu-duna.jpg') no-repeat center center/cover;
+}
+.slide:nth-child(4){
+    background: url('../img/padre-hijo.jpg') no-repeat center bottom/cover;
+}
+.slide:nth-child(5){
+    background: url('../img/ruinas-ventana.jpg') no-repeat center bottom/cover;
+}
+.slide:nth-child(6){
+    background: url('../img/selva-ruinas.jpg') no-repeat center bottom/cover;
+}
